@@ -130,6 +130,9 @@ prompt_z4rr3t_preprompt_render() {
 	# Initialize the preprompt array.
 	local -a preprompt_parts
 
+	# Username and machine, if applicable.
+	[[ -n $prompt_z4rr3t_state[username] ]] && preprompt_parts+=($prompt_z4rr3t_state[username])
+
 	# Set the path.
 	preprompt_parts+=('%F{${prompt_z4rr3t_colors[path]}}%~%f')
 
@@ -143,8 +146,6 @@ prompt_z4rr3t_preprompt_render() {
 		preprompt_parts+=('%F{$prompt_z4rr3t_colors[git:arrow]}${prompt_z4rr3t_git_arrows}%f')
 	fi
 
-	# Username and machine, if applicable.
-	[[ -n $prompt_z4rr3t_state[username] ]] && preprompt_parts+=($prompt_z4rr3t_state[username])
 	# Execution time.
 	[[ -n $prompt_z4rr3t_cmd_exec_time ]] && preprompt_parts+=('%F{$prompt_z4rr3t_colors[execution_time]}${prompt_z4rr3t_cmd_exec_time}%f')
 
