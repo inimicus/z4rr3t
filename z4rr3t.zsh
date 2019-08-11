@@ -174,7 +174,7 @@ prompt_z4rr3t_preprompt_render() {
 
 	if [[ $1 == precmd ]]; then
 		# Initial newline, for spaciousness.
-		print
+		# print
 	elif [[ $prompt_z4rr3t_last_prompt != $expanded_prompt ]]; then
 		# Redraw the prompt.
 		prompt_z4rr3t_reset_prompt
