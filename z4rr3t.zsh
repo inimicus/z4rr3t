@@ -462,7 +462,7 @@ prompt_z4rr3t_async_callback() {
 			if (( code == 0 )); then
 				unset prompt_z4rr3t_git_dirty
 			else
-				typeset -g prompt_z4rr3t_git_dirty="*"
+				typeset -g prompt_z4rr3t_git_dirty="⚡"
 			fi
 
 			[[ $prev_dirty != $prompt_z4rr3t_git_dirty ]] && do_render=1
