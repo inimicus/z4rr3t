@@ -581,7 +581,7 @@ prompt_z4rr3t_state_setup() {
 		unset MATCH MBEGIN MEND
 	fi
 
-	hostname='%F{$prompt_z4rr3t_colors[host]}@%m%f'
+	hostname='%F{$prompt_z4rr3t_colors[at]}@%f%F{$prompt_z4rr3t_colors[host]}%m%f'
 	# Show `username@host` if logged in through SSH.
 	[[ -n $ssh_connection ]] && username='%F{$prompt_z4rr3t_colors[user]}%n%f'"$hostname"
 
@@ -679,8 +679,9 @@ prompt_z4rr3t_setup() {
 		path                 blue
 		prompt:error         red
 		prompt:success       magenta
-		user                 242
+		user                 yellow
 		user:root            default
+		at					 white
 		virtualenv           242
 	)
 	prompt_z4rr3t_colors=("${(@kv)prompt_z4rr3t_colors_default}")
